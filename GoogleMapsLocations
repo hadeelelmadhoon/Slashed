@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+  var BrickOvenLatLng = {lat: 41.313435, lng: -72.931538};
+  var SitarLatLng = {lat:41.3100, lng:-72.9211};
+  var HasnasLatLng = {lat:41.3127, lng:-72.9333};
+  var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
+  var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
+  var BNatLatLng = {lat:41.3073, lng:-72.9300};
+  var BookLatLng = {lat:41.3085, lng:-72.9321};
+  var CrepeLatLng = {lat:41.3112, lng:-72.9226};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 41.3163, lng: -72.9223}
+  });
+//Brick oven popup info
+  var BrickOvenString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Brick Oven Pizza</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 777-4444<br>'+
+            '50% off Fridays only</p>'+
+            '</div>'+
+            '</div>';
+
+        var BrickOvenPopup = new google.maps.InfoWindow({
+          content: BrickOvenString
+        });
+// Sitar popup info
+    var SitarString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Sitar Restaurant</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 777-3234<br>'+
+            '10% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var SitarPopup = new google.maps.InfoWindow({
+          content: SitarString
+        });
+
+// Hasnas popup info
+    var HasnasString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Hasnas Grill</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 498-2801<br>'+
+            '10% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var HasnasPopup = new google.maps.InfoWindow({
+          content: HasnasString
+        });
+
+// PapaJohns popup info
+    var PapaJohnsString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Papa Johns</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 776-7272<br>'+
+            '50% off (online order) YALE50</p>'+
+            '</div>'+
+            '</div>';
+
+        var PapaJohnsPopup = new google.maps.InfoWindow({
+          content: PapaJohnsString
+        });
+
+// Shake Shack popup info
+    var ShakeShackString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Shake Shack</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 747-8483<br>'+
+            '10% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var ShakeShackPopup = new google.maps.InfoWindow({
+          content: ShakeShackString
+        });
+
+// B Natural Cafe popup info
+    var BNatString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">B Natural Cafe</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 773-1343<br>'+
+            '5% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var BNatPopup = new google.maps.InfoWindow({
+          content: BNatString
+        });
+
+// Book Trader Cafe popup info
+    var BookString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Book Trader Cafe</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 787-6147 <br>'+
+            '10% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var BookPopup = new google.maps.InfoWindow({
+          content: BookString
+        });
+
+// Crepes Choupette popup info
+    var CrepeString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Crepes Choupette</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (475) 441-7966 <br>'+
+            '10% off everyday</p>'+
+            '</div>'+
+            '</div>';
+
+        var CrepePopup = new google.maps.InfoWindow({
+          content: CrepeString
+        });
+
+// Oven Brick Pizza marker and popup
+  var BrickOvenMarker = new google.maps.Marker({
+    position: BrickOvenLatLng,
+    title: 'Brick Oven Pizza'
+  });
+  BrickOvenMarker.addListener('click', function() {
+          BrickOvenPopup.open(map, BrickOvenMarker);
+        });
+
+// Sitar marker and popup
+ var SitarMarker = new google.maps.Marker({
+    position: SitarLatLng,
+    title: 'Sitar Restuarant'
+  });
+   SitarMarker.addListener('click', function() {
+          SitarPopup.open(map, SitarMarker);
+        });
+
+// Hasnas marker and popup
+ var HasnasMarker = new google.maps.Marker({
+    position: HasnasLatLng,
+    title: 'Hasnas Grill'
+  });
+   HasnasMarker.addListener('click', function() {
+          HasnasPopup.open(map, HasnasMarker);
+        });
+
+// Papa Johns marker and popup
+ var PapaJohnsMarker = new google.maps.Marker({
+    position: PapaJohnsLatLng,
+    title: 'Papa Johns'
+  });
+   PapaJohnsMarker.addListener('click', function() {
+          PapaJohnsPopup.open(map, PapaJohnsMarker);
+        });
+
+// Shake Shack marker and popup
+ var ShakeShackMarker = new google.maps.Marker({
+    position: ShakeShackLatLng,
+    title: 'Shake Shack'
+  });
+   ShakeShackMarker.addListener('click', function() {
+          ShakeShackPopup.open(map, ShakeShackMarker);
+        });
+
+// B Natural marker and popup
+ var BNatMarker = new google.maps.Marker({
+    position: BNatLatLng,
+    title: 'B Natural Cafe'
+  });
+   BNatMarker.addListener('click', function() {
+          BNatPopup.open(map, BNatMarker);
+        });
+
+// Book Trader marker and popup
+ var BookMarker = new google.maps.Marker({
+    position: BookLatLng,
+    title: 'Book Trader Cafe'
+  });
+   BookMarker.addListener('click', function() {
+          BookPopup.open(map, BookMarker);
+        });
+
+// Crepe marker and popup
+ var CrepeMarker = new google.maps.Marker({
+    position: CrepeLatLng,
+    title: 'Crepes Choupette'
+  });
+   CrepeMarker.addListener('click', function() {
+          CrepePopup.open(map, CrepeMarker);
+        });
+
+
+// set markers on map
+BrickOvenMarker.setMap(map);
+SitarMarker.setMap(map);
+HasnasMarker.setMap(map);
+PapaJohnsMarker.setMap(map);
+ShakeShackMarker.setMap(map);
+BNatMarker.setMap(map);
+BookMarker.setMap(map);
+CrepeMarker.setMap(map);
+}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&callback=initMap"
+    async defer></script>
+  </body>
+</html>
