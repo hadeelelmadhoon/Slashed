@@ -30,6 +30,17 @@
         var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
         var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
         var BNatLatLng = {lat:41.3073, lng:-72.9300};
+        var BookTraderCafeLatLng = {lat:41.308503, lng:-72.932132};
+        var CrepesChoupetteLatLng = {lat:41.311193, lng:-72.922577};
+        var DonutCrazyLatLng = {lat:41.311409, lng:-72.929754};
+        var FroyoWorldLatLng = {lat:41.307797, lng:-72.930652};
+        var IvyWokLatLng = {lat:41.311168, lng:-72.931713};
+        var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
+        var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
+        var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
+         
+       
+        
 
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13.8,
@@ -290,11 +301,148 @@
             '5% off everyday</p>'+
             '</div>'+
             '</div>';
-
-        var BNatPopup = new google.maps.InfoWindow({
+        
+         var BNatPopup = new google.maps.InfoWindow({
             content: BNatString
         });
 
+        
+        // Book Trader popup info
+        var BookTraderCafeString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Book Trader Cafe</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 787-6147<br>'+
+            '10% off for any book, CD, or DVD purchase</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var BookTraderCafePopup = new google.maps.InfoWindow({
+            content: BookTraderCafeString
+        });
+        
+        // Book Trader popup info
+        var BookTraderCafeString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Book Trader Cafe</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 787-6147<br>'+
+            '10% off for any book, CD, or DVD purchase</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var BookTraderCafePopup = new google.maps.InfoWindow({
+            content: BookTraderCafeString
+        });
+
+        
+        //Crepes Choupette popup info
+        var CrepesChoupetteString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Crêpes Choupette</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (470) 441-7966<br>'+
+            '10% off everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var CrepesChoupettePopup = new google.maps.InfoWindow({
+            content: CrepesChoupetteString
+        });
+        
+        //Donut Crazy popup info
+        var DonutCrazyString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Donut Crazy</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 745-4149<br>'+
+            '10% off everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var DonutCrazyPopup = new google.maps.InfoWindow({
+            content: DonutCrazyString
+        });
+        
+        //Froyo World popup info
+        var FroyoWorldString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Froyo World</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 777-4040<br>'+
+            '20% off all full priced items everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var FroyoWorldPopup = new google.maps.InfoWindow({
+            content: FroyoWorldString
+        });
+        
+        //Ivy Wok popup info
+        var IvyWokString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Ivy Wok</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 562-8800<br>'+
+            '5% off cash purchases over $20 everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var IvyWokPopup = new google.maps.InfoWindow({
+            content: IvyWokString
+        });
+        
+        //Arethusa Farm Dairy popup info
+        var ArethusaFarmDairyString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Arethusa Farm Dairy</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 390-5114<br>'+
+            '10% off cheese purchases everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var ArethusaFarmDairyPopup = new google.maps.InfoWindow({
+            content: ArethusaFarmDairyString
+        });
+        
+        //Moe's Southwest Grill popup info
+        var MoesSouthwestGrillString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Moes Southwest Grill</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 776-6637<br>'+
+            '10% off food purchases(only) everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var MoesSouthwestGrillPopup = new google.maps.InfoWindow({
+            content: MoesSouthwestGrillString
+        });
+        
+        //Tomatilo Taco Joint popup info
+        var TomatiloTacoJointString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Tomatilo Taco Joint</h1>'+
+            '<div id="bodyContent">'+
+            'Phone: (203) 782-6000<br>'+
+            '15% off everyday</p>'
+            '</div>'+
+            '</div>'; 
+        
+        var TomatiloTacoJointPopup = new google.maps.InfoWindow({
+            content: TomatiloTacoJointString
+        });
+        
         // Oven Brick Pizza marker and popup
         var BrickOvenMarker = new google.maps.Marker({
             position: BrickOvenLatLng,
@@ -374,6 +522,121 @@
             BNatPopup.open(map, BNatMarker);
             currentInfoWindow = BNatPopup;
         });
+        
+        // Book Trader Cafe marker and popup
+        var BookTraderCafeMarker = new google.maps.Marker({
+            position: BookTraderCafeLatLng,
+            title: 'Book Trader Cafe'
+        });
+        BookTraderCafeMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            BookTraderCafePopup.open(map, BookTraderCafeMarker);
+            currentInfoWindow = BookTraderCafePopup;
+        });
+        
+        // Crepes Choupette marker and popup
+        var CrepesChoupetteMarker = new google.maps.Marker({
+            position: CrepesChoupetteLatLng,
+            title: 'Crêpes Choupette'
+        });
+        CrepesChoupetteMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            CrepesChoupettePopup.open(map, CrepesChoupetteMarker);
+            currentInfoWindow = CrepesChoupettePopup;
+        });
+        
+         // Donut Crazy marker and popup
+        var DonutCrazyMarker = new google.maps.Marker({
+            position: DonutCrazyLatLng,
+            title: 'Donut Crazy'
+        });
+        DonutCrazyMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            DonutCrazyPopup.open(map, DonutCrazyMarker);
+            currentInfoWindow = DonutCrazyPopup;
+        });
+        
+        // Froyo World marker and popup
+        var FroyoWorldMarker = new google.maps.Marker({
+            position: FroyoWorldLatLng,
+            title: 'Froyo World'
+        });
+        FroyoWorldMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            FroyoWorldPopup.open(map, FroyoWorldMarker);
+            currentInfoWindow = FroyoWorldPopup;
+        });
+        
+        // Ivy Wok marker and popup
+        var IvyWokMarker = new google.maps.Marker({
+            position: IvyWokLatLng,
+            title: 'Ivy Wok'
+        });
+        IvyWokMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            IvyWokPopup.open(map, IvyWokMarker);
+            currentInfoWindow = IvyWokPopup;
+        });
+        
+        // Arethusa Farm Dairy marker and popup
+        var ArethusaFarmDairyMarker = new google.maps.Marker({
+            position: ArethusaFarmDairyLatLng,
+            title: 'Arethusa Farm Dairy'
+        });
+        ArethusaFarmDairyMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            ArethusaFarmDairyPopup.open(map, ArethusaFarmDairyMarker);
+            currentInfoWindow = ArethusaFarmDairyPopup;
+        });
+        
+        // Moe's Southwest Grill marker and popup
+        var MoesSouthwestGrillMarker = new google.maps.Marker({
+            position: MoesSouthwestGrillLatLng,
+            title: 'Moes Southwest Grill'
+        });
+        MoesSouthwestGrillMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            MoesSouthwestGrillPopup.open(map, MoesSouthwestGrillMarker);
+            currentInfoWindow = MoesSouthwestGrillPopup;
+        });
+        
+        //Tomatilo Taco Joint marker and popup
+        var TomatiloTacoJointMarker = new google.maps.Marker({
+            position: TomatiloTacoJointLatLng,
+            title: 'Tomatilo Taco Joint'
+        });
+        TomatiloTacoJointMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            TomatiloTacoJointPopup.open(map, TomatiloTacoJointMarker);
+            currentInfoWindow = TomatiloTacoJointPopup;
+        });
+        
+         //ssssssss
+        BookTraderCafeLatLng = {lat:41.308503, lng:-72.932132};
+        var CrepesChoupetteLatLng = {lat:41.311193, lng:-72.922577};
+        var DonutCrazyLatLng = {lat:41.311409, lng:-72.929754};
+        var FroyoWorldLatLng = {lat:41.307797, lng:-72.930652};
+        var IvyWokLatLng = {lat:41.311168, lng:-72.931713};
+        var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
+        var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
+        var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
+        //sssssssss
 
         // set markers on map
         BrickOvenMarker.setMap(map);
@@ -382,6 +645,14 @@
         PapaJohnsMarker.setMap(map);
         ShakeShackMarker.setMap(map);
         BNatMarker.setMap(map);
+        BookTraderCafeMarker.setMap(map);
+        CrepesChoupetteMarker.setMap(map);
+        DonutCrazyMarker.setMap(map);
+        FroyoWorldMarker.setMap(map);
+        IvyWokMarker.setMap(map);
+        ArethusaFarmDairyMarker.setMap(map);
+        MoesSouthwestGrillMarker.setMap(map);
+        TomatiloTacoJointMarker.setMap(map);
     }
 
 
