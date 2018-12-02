@@ -43,6 +43,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13.8,
             center: myLatLng,
+            mapTypeControl: false,
+            fullscreenControl: false,
             styles: [
                 {featureType: 'administrative', elementType: 'labels',
                     stylers: [
