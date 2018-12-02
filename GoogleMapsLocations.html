@@ -38,9 +38,7 @@
         var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
         var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
         var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
-         
-       
-        
+
 
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13.8,
@@ -48,29 +46,21 @@
             styles: [
                 {featureType: 'administrative', elementType: 'labels',
                     stylers: [
-
                         {color: '#2762cb'},
                         {lightness: '5'},
                         {visibility: 'simplified'} ]},
-
                 {featureType: 'administrative.land_parcel', elementType: 'all',
                     stylers: [
-
                         {visibility: 'off'} ]},
-
                 {featureType: 'landscape', elementType: 'all',
                     stylers: [
-
                         {gamma: '0.50'},
                         {lightness: '-75'},
                         {saturation: '-86'},
                         {hue: '#ff4a00'} ]},
-
                 {featureType: 'landscape.man_made', elementType: 'all',
                     stylers: [
-
                         {hue: '#ff1700'} ]},
-
                 {
                     featureType: 'landscape.natural.landcover',
                     elementType: 'all',
@@ -92,7 +82,6 @@
                         }
                     ]
                 },
-
                 {
                     featureType: 'poi',
                     elementType: 'labels',
@@ -102,7 +91,6 @@
                         }
                     ]
                 },
-
                 {
                     featureType: 'poi',
                     elementType: 'labels.text.stroke',
@@ -213,8 +201,6 @@
                 }
             ]
         });
-
-
         //Brick oven popup info
         var BrickOvenString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -224,15 +210,13 @@
             'Phone: (203) 777-4444<br>'+
             '50% off Fridays only</p>'+
             'Sun-Wed and Sat: 3:00 PM-3:00 AM</p>'+
-            'Thu-Fri: 3:00 PM-4:00 AM</p>'
-            '</div>'+
-            '</div>';
-
+            'Thu-Fri: 3:00 PM-4:00 AM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
         var BrickOvenPopup = new google.maps.InfoWindow({
             content: BrickOvenString
         });
-
-
         // Sitar popup info
         var SitarString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -241,14 +225,13 @@
             '<div id="bodyContent">'+
             'Phone: (203) 777-3234<br>'+
             '10% off everyday</p>'+
-            'Sun-Sat: 11:30 AM-2:30 PM, 5:00 PM-10:00 PM</p>'
-            '</div>'+
-            '</div>';
-
+            'Sun-Sat: 11:30 AM-2:30 PM, 5:00 PM-10:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
         var SitarPopup = new google.maps.InfoWindow({
             content: SitarString
         });
-
         // Hasnas popup info
         var HasnasString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -260,14 +243,13 @@
             'Sun: 11:00 AM-9:00 PM</p>'+
             'Mon,Wed,Thu: 11:00 AM-10:00 PM</p>'+
             'Tue: Closed</p>'+
-            'Fri-Sat: 11:00 AM-11:00 PM</p>'
-            '</div>'+
-            '</div>';
-
+            'Fri-Sat: 11:00 AM-11:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
         var HasnasPopup = new google.maps.InfoWindow({
             content: HasnasString
         });
-
         // PapaJohns popup info
         var PapaJohnsString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -277,14 +259,13 @@
             'Phone: (203) 776-7272<br>'+
             '50% off (online order) YALE50</p>'+
             'Sun-Thu: 11:00 AM-1:00 AM</p>'+
-            'Fri-Sat: 11:00 AM-2:00 AM</p>'
-            '</div>'+
-            '</div>';
-
+            'Fri-Sat: 11:00 AM-2:00 AM<br>'+
+        '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
         var PapaJohnsPopup = new google.maps.InfoWindow({
             content: PapaJohnsString
         });
-
         // Shake Shack popup info
         var ShakeShackString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -294,14 +275,13 @@
             'Phone: (203) 747-8483<br>'+
             '10% off everyday</p>'+
             'Sun-Thu: 11:00 AM-10:00 PM</p>'+
-            'Fri-Sat: 11:00 AM-11:00 PM</p>'
-            '</div>'+
-            '</div>';
-
+            'Fri-Sat: 11:00 AM-11:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
         var ShakeShackPopup = new google.maps.InfoWindow({
             content: ShakeShackString
         });
-
         // B Natural Cafe popup info
         var BNatString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -311,15 +291,15 @@
             'Phone: (203) 773-1343<br>'+
             '5% off everyday</p>'+
             'Mon-Sat: 7:30 AM-8:00 PM</p>'+
-            'Sun: 7:30 AM-6:00 PM</p>'
-            '</div>'+
-            '</div>';
-        
-         var BNatPopup = new google.maps.InfoWindow({
+            'Sun: 7:30 AM-6:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
+        var BNatPopup = new google.maps.InfoWindow({
             content: BNatString
         });
 
-        
         // Book Trader popup info
         var BookTraderCafeString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -330,15 +310,16 @@
             '10% off for any book, CD, or DVD purchase</p>'+
             'Sun: 9:00 AM-7:00 PM</p>'+
             'Mon-Fri: 7:30 AM-9:00 PM</p>'+
-            'Sat: 9:00 AM-9:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sat: 9:00 AM-9:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var BookTraderCafePopup = new google.maps.InfoWindow({
             content: BookTraderCafeString
         });
-        
-        
+
+
         //Crepes Choupette popup info
         var CrepesChoupetteString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -348,14 +329,15 @@
             'Phone: (470) 441-7966<br>'+
             '10% off everyday</p>'+
             'Sun and Sat: 8:00 AM-5:00 PM</p>'+
-            'Mon-Fri: 7:30 AM-6:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Mon-Fri: 7:30 AM-6:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var CrepesChoupettePopup = new google.maps.InfoWindow({
             content: CrepesChoupetteString
         });
-        
+
         //Donut Crazy popup info
         var DonutCrazyString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -365,14 +347,15 @@
             'Phone: (203) 745-4149<br>'+
             '10% off everyday</p>'+
             'Fri and Sat: 7:00 AM-00:00 AM</p>'+
-            'Sun-Thu: 7:00 AM-11:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun-Thu: 7:00 AM-11:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var DonutCrazyPopup = new google.maps.InfoWindow({
             content: DonutCrazyString
         });
-        
+
         //Froyo World popup info
         var FroyoWorldString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -382,14 +365,15 @@
             'Phone: (203) 777-4040<br>'+
             '20% off all full priced items everyday</p>'+
             'Fri and Sat: 12:00 PM-00:00 AM</p>'+
-            'Sun-Thu: 12:00 PM-11:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun-Thu: 12:00 PM-11:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var FroyoWorldPopup = new google.maps.InfoWindow({
             content: FroyoWorldString
         });
-        
+
         //Ivy Wok popup info
         var IvyWokString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -399,14 +383,15 @@
             'Phone: (203) 562-8800<br>'+
             '5% off cash purchases over $20 everyday</p>'+
             'Mon-Sat: 11:00 AM-00:00 AM</p>'+
-            'Sun: 12:00 PM-11:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun: 12:00 PM-11:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var IvyWokPopup = new google.maps.InfoWindow({
             content: IvyWokString
         });
-        
+
         //Arethusa Farm Dairy popup info
         var ArethusaFarmDairyString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -416,14 +401,15 @@
             'Phone: (203) 390-5114<br>'+
             '10% off cheese purchases everyday</p>'+
             'Mon-Sat: 11:00 AM-9:00 PM</p>'+
-            'Sun: 12:00 PM-6:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun: 12:00 PM-6:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var ArethusaFarmDairyPopup = new google.maps.InfoWindow({
             content: ArethusaFarmDairyString
         });
-        
+
         //Moe's Southwest Grill popup info
         var MoesSouthwestGrillString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -432,14 +418,15 @@
             '<div id="bodyContent">'+
             'Phone: (203) 776-6637<br>'+
             '10% off food purchases(only) everyday</p>'+
-            'Sun-Sat: 11:00 AM-9:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun-Sat: 11:00 AM-9:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var MoesSouthwestGrillPopup = new google.maps.InfoWindow({
             content: MoesSouthwestGrillString
         });
-        
+
         //Tomatilo Taco Joint popup info
         var TomatiloTacoJointString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -448,14 +435,15 @@
             '<div id="bodyContent">'+
             'Phone: (203) 782-6000<br>'+
             '15% off everyday</p>'+
-            'Sun-Sat: 11:30 AM-10:00 PM</p>'
-            '</div>'+
-            '</div>'; 
-        
+            'Sun-Sat: 11:30 AM-10:00 PM<br>'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+        '</div>'+
+        '</div>';
+
         var TomatiloTacoJointPopup = new google.maps.InfoWindow({
             content: TomatiloTacoJointString
         });
-        
+
         // Oven Brick Pizza marker and popup
         var BrickOvenMarker = new google.maps.Marker({
             position: BrickOvenLatLng,
@@ -469,7 +457,6 @@
             BrickOvenPopup.open(map, BrickOvenMarker);
             currentInfoWindow = BrickOvenPopup;
         });
-
         // Sitar marker and popup
         var SitarMarker = new google.maps.Marker({
             position: SitarLatLng,
@@ -482,7 +469,6 @@
             SitarPopup.open(map, SitarMarker);
             currentInfoWindow = SitarPopup;
         });
-
         // Hasnas marker and popup
         var HasnasMarker = new google.maps.Marker({
             position: HasnasLatLng,
@@ -495,7 +481,6 @@
             HasnasPopup.open(map, HasnasMarker);
             currentInfoWindow = HasnasPopup;
         });
-
         // Papa Johns marker and popup
         var PapaJohnsMarker = new google.maps.Marker({
             position: PapaJohnsLatLng,
@@ -508,7 +493,6 @@
             PapaJohnsPopup.open(map, PapaJohnsMarker);
             currentInfoWindow = PapaJohnsPopup;
         });
-
         // Shake Shack marker and popup
         var ShakeShackMarker = new google.maps.Marker({
             position: ShakeShackLatLng,
@@ -520,9 +504,7 @@
             }
             ShakeShackPopup.open(map, ShakeShackMarker);
             currentInfoWindow = ShakeShackPopup;
-
         });
-
         // B Natural marker and popup
         var BNatMarker = new google.maps.Marker({
             position: BNatLatLng,
@@ -535,7 +517,7 @@
             BNatPopup.open(map, BNatMarker);
             currentInfoWindow = BNatPopup;
         });
-        
+
         // Book Trader Cafe marker and popup
         var BookTraderCafeMarker = new google.maps.Marker({
             position: BookTraderCafeLatLng,
@@ -548,7 +530,7 @@
             BookTraderCafePopup.open(map, BookTraderCafeMarker);
             currentInfoWindow = BookTraderCafePopup;
         });
-        
+
         // Crepes Choupette marker and popup
         var CrepesChoupetteMarker = new google.maps.Marker({
             position: CrepesChoupetteLatLng,
@@ -561,8 +543,8 @@
             CrepesChoupettePopup.open(map, CrepesChoupetteMarker);
             currentInfoWindow = CrepesChoupettePopup;
         });
-        
-         // Donut Crazy marker and popup
+
+        // Donut Crazy marker and popup
         var DonutCrazyMarker = new google.maps.Marker({
             position: DonutCrazyLatLng,
             title: 'Donut Crazy'
@@ -574,7 +556,7 @@
             DonutCrazyPopup.open(map, DonutCrazyMarker);
             currentInfoWindow = DonutCrazyPopup;
         });
-        
+
         // Froyo World marker and popup
         var FroyoWorldMarker = new google.maps.Marker({
             position: FroyoWorldLatLng,
@@ -587,7 +569,7 @@
             FroyoWorldPopup.open(map, FroyoWorldMarker);
             currentInfoWindow = FroyoWorldPopup;
         });
-        
+
         // Ivy Wok marker and popup
         var IvyWokMarker = new google.maps.Marker({
             position: IvyWokLatLng,
@@ -600,7 +582,7 @@
             IvyWokPopup.open(map, IvyWokMarker);
             currentInfoWindow = IvyWokPopup;
         });
-        
+
         // Arethusa Farm Dairy marker and popup
         var ArethusaFarmDairyMarker = new google.maps.Marker({
             position: ArethusaFarmDairyLatLng,
@@ -613,7 +595,7 @@
             ArethusaFarmDairyPopup.open(map, ArethusaFarmDairyMarker);
             currentInfoWindow = ArethusaFarmDairyPopup;
         });
-        
+
         // Moe's Southwest Grill marker and popup
         var MoesSouthwestGrillMarker = new google.maps.Marker({
             position: MoesSouthwestGrillLatLng,
@@ -626,7 +608,7 @@
             MoesSouthwestGrillPopup.open(map, MoesSouthwestGrillMarker);
             currentInfoWindow = MoesSouthwestGrillPopup;
         });
-        
+
         //Tomatilo Taco Joint marker and popup
         var TomatiloTacoJointMarker = new google.maps.Marker({
             position: TomatiloTacoJointLatLng,
@@ -639,17 +621,7 @@
             TomatiloTacoJointPopup.open(map, TomatiloTacoJointMarker);
             currentInfoWindow = TomatiloTacoJointPopup;
         });
-        
-         //ssssssss
-        BookTraderCafeLatLng = {lat:41.308503, lng:-72.932132};
-        var CrepesChoupetteLatLng = {lat:41.311193, lng:-72.922577};
-        var DonutCrazyLatLng = {lat:41.311409, lng:-72.929754};
-        var FroyoWorldLatLng = {lat:41.307797, lng:-72.930652};
-        var IvyWokLatLng = {lat:41.311168, lng:-72.931713};
-        var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
-        var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
-        var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
-        //sssssssss
+
 
         // set markers on map
         BrickOvenMarker.setMap(map);
@@ -667,10 +639,8 @@
         MoesSouthwestGrillMarker.setMap(map);
         TomatiloTacoJointMarker.setMap(map);
     }
-
-
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&callback=initMap"
         async defer></script>
 </body>
-</html>
+</html></html>
