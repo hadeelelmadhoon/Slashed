@@ -1,210 +1,211 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Slashed</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-  <style>
-  /* Always set the map height explicitly to define the size of the div
-  * element that contains the map. */
-  #map {
-    height: 100%;
-  }
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  </style>
+    <title>Slashed</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-  <div id="map"></div>
-  <script>
-  function initMap() {
-    var myLatLng = {lat: 41.3163, lng: -72.9223}
-    var BrickOvenLatLng = {lat: 41.313435, lng: -72.931538};
-    var SitarLatLng = {lat:41.3100, lng:-72.9211};
-    var HasnasLatLng = {lat:41.3127, lng:-72.9333};
-    var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
-    var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
-    var BNatLatLng = {lat:41.3073, lng:-72.9300};
+<div id="map"></div>
+<script>
+    function initMap() {
+        var currentInfoWindow = null;
+        var myLatLng = {lat: 41.3163, lng: -72.9223}
+        var BrickOvenLatLng = {lat: 41.313435, lng: -72.931538};
+        var SitarLatLng = {lat:41.3100, lng:-72.9211};
+        var HasnasLatLng = {lat:41.3127, lng:-72.9333};
+        var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
+        var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
+        var BNatLatLng = {lat:41.3073, lng:-72.9300};
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13.8,
-      center: myLatLng,
-      styles: [
-        {featureType: 'administrative', elementType: 'labels',
-        stylers: [
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13.8,
+            center: myLatLng,
+            styles: [
+                {featureType: 'administrative', elementType: 'labels',
+                    stylers: [
 
-          {color: '#2762cb'},
-          {lightness: '5'},
-          {visibility: 'simplified'} ]},
+                        {color: '#2762cb'},
+                        {lightness: '5'},
+                        {visibility: 'simplified'} ]},
 
-          {featureType: 'administrative.land_parcel', elementType: 'all',
-          stylers: [
+                {featureType: 'administrative.land_parcel', elementType: 'all',
+                    stylers: [
 
-            {visibility: 'off'} ]},
+                        {visibility: 'off'} ]},
 
-            {featureType: 'landscape', elementType: 'all',
-            stylers: [
+                {featureType: 'landscape', elementType: 'all',
+                    stylers: [
 
-              {gamma: '0.50'},
-              {lightness: '-75'},
-              {saturation: '-86'},
-              {hue: '#ff4a00'} ]},
+                        {gamma: '0.50'},
+                        {lightness: '-75'},
+                        {saturation: '-86'},
+                        {hue: '#ff4a00'} ]},
 
-              {featureType: 'landscape.man_made', elementType: 'all',
-              stylers: [
+                {featureType: 'landscape.man_made', elementType: 'all',
+                    stylers: [
 
-                {hue: '#ff1700'} ]},
+                        {hue: '#ff1700'} ]},
 
                 {
-                  featureType: 'landscape.natural.landcover',
-                  elementType: 'all',
-                  stylers: [
-                    {
-                      hue: '#ff0000'
-                    }
-                  ]
+                    featureType: 'landscape.natural.landcover',
+                    elementType: 'all',
+                    stylers: [
+                        {
+                            hue: '#ff0000'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'poi',
-                  elementType: 'all',
-                  stylers: [
-                    {
-                      color: '#e74231'
-                    },
-                    {
-                      visibility: 'off'
-                    }
-                  ]
-                },
-
-                {
-                  featureType: 'poi',
-                  elementType: 'labels',
-                  stylers: [
-                    {
-                      visibility: 'on'
-                    }
-                  ]
+                    featureType: 'poi',
+                    elementType: 'all',
+                    stylers: [
+                        {
+                            color: '#e74231'
+                        },
+                        {
+                            visibility: 'off'
+                        }
+                    ]
                 },
 
                 {
-                  featureType: 'poi',
-                  elementType: 'labels.text.stroke',
-                  stylers: [
-                    {
-                      color: '#4d6447'
-                    },
-                    {
-                      visibility: 'off'
-                    }
-                  ]
+                    featureType: 'poi',
+                    elementType: 'labels',
+                    stylers: [
+                        {
+                            visibility: 'on'
+                        }
+                    ]
+                },
+
+                {
+                    featureType: 'poi',
+                    elementType: 'labels.text.stroke',
+                    stylers: [
+                        {
+                            color: '#4d6447'
+                        },
+                        {
+                            visibility: 'off'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'poi',
-                  elementType: 'labels.icon',
-                  stylers: [
-                    {
-                      color: '#f0ce41'
-                    },
-                    {
-                      visibility: 'off'
-                    }
-                  ]
+                    featureType: 'poi',
+                    elementType: 'labels.icon',
+                    stylers: [
+                        {
+                            color: '#f0ce41'
+                        },
+                        {
+                            visibility: 'off'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'poi.park',
-                  elementType: 'geometry.fill',
-                  stylers: [
-                    {
-                      visibility: 'on'
-                    },
-                    {
-                      saturation: '0'
-                    },
-                    {
-                      lightness: '25'
-                    },
-                    {
-                      color: '#123a16'
-                    },
-                    {
-                      gamma: '1'
-                    }
-                  ]
+                    featureType: 'poi.park',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        {
+                            visibility: 'on'
+                        },
+                        {
+                            saturation: '0'
+                        },
+                        {
+                            lightness: '25'
+                        },
+                        {
+                            color: '#123a16'
+                        },
+                        {
+                            gamma: '1'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'road',
-                  elementType: 'all',
-                  stylers: [
-                    {
-                      color: '#231f20'
-                    }
-                  ]
+                    featureType: 'road',
+                    elementType: 'all',
+                    stylers: [
+                        {
+                            color: '#231f20'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'road',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#9b826f'
-                    }
-                  ]
+                    featureType: 'road',
+                    elementType: 'labels.text.fill',
+                    stylers: [
+                        {
+                            color: '#9b826f'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'transit',
-                  elementType: 'all',
-                  stylers: [
-                    {
-                      color: '#313639'
-                    },
-                    {
-                      visibility: 'off'
-                    }
-                  ]
+                    featureType: 'transit',
+                    elementType: 'all',
+                    stylers: [
+                        {
+                            color: '#313639'
+                        },
+                        {
+                            visibility: 'off'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'transit',
-                  elementType: 'labels.text',
-                  stylers: [
-                    {
-                      hue: '#ff0000'
-                    }
-                  ]
+                    featureType: 'transit',
+                    elementType: 'labels.text',
+                    stylers: [
+                        {
+                            hue: '#ff0000'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'transit',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      visibility: 'simplified'
-                    },
-                    {
-                      hue: '#ff0000'
-                    }
-                  ]
+                    featureType: 'transit',
+                    elementType: 'labels.text.fill',
+                    stylers: [
+                        {
+                            visibility: 'simplified'
+                        },
+                        {
+                            hue: '#ff0000'
+                        }
+                    ]
                 },
                 {
-                  featureType: 'water',
-                  elementType: 'all',
-                  stylers: [
-                    {
-                      color: '#0e171d'
-                    },
-                    {
-                      lightness: '5'
-                    }
-                  ]
+                    featureType: 'water',
+                    elementType: 'all',
+                    stylers: [
+                        {
+                            color: '#0e171d'
+                        },
+                        {
+                            lightness: '5'
+                        }
+                    ]
                 }
-              ]
-            });
+            ]
+        });
 
 
-            //Brick oven popup info
-            var BrickOvenString = '<div id="content">'+
+        //Brick oven popup info
+        var BrickOvenString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Brick Oven Pizza</h1>'+
@@ -214,13 +215,13 @@
             '</div>'+
             '</div>';
 
-            var BrickOvenPopup = new google.maps.InfoWindow({
-              content: BrickOvenString
-            });
+        var BrickOvenPopup = new google.maps.InfoWindow({
+            content: BrickOvenString
+        });
 
 
-            // Sitar popup info
-            var SitarString = '<div id="content">'+
+        // Sitar popup info
+        var SitarString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Sitar Restaurant</h1>'+
@@ -230,12 +231,12 @@
             '</div>'+
             '</div>';
 
-            var SitarPopup = new google.maps.InfoWindow({
-              content: SitarString
-            });
+        var SitarPopup = new google.maps.InfoWindow({
+            content: SitarString
+        });
 
-            // Hasnas popup info
-            var HasnasString = '<div id="content">'+
+        // Hasnas popup info
+        var HasnasString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Hasnas Grill</h1>'+
@@ -245,12 +246,12 @@
             '</div>'+
             '</div>';
 
-            var HasnasPopup = new google.maps.InfoWindow({
-              content: HasnasString
-            });
+        var HasnasPopup = new google.maps.InfoWindow({
+            content: HasnasString
+        });
 
-            // PapaJohns popup info
-            var PapaJohnsString = '<div id="content">'+
+        // PapaJohns popup info
+        var PapaJohnsString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Papa Johns</h1>'+
@@ -260,12 +261,12 @@
             '</div>'+
             '</div>';
 
-            var PapaJohnsPopup = new google.maps.InfoWindow({
-              content: PapaJohnsString
-            });
+        var PapaJohnsPopup = new google.maps.InfoWindow({
+            content: PapaJohnsString
+        });
 
-            // Shake Shack popup info
-            var ShakeShackString = '<div id="content">'+
+        // Shake Shack popup info
+        var ShakeShackString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Shake Shack</h1>'+
@@ -275,12 +276,12 @@
             '</div>'+
             '</div>';
 
-            var ShakeShackPopup = new google.maps.InfoWindow({
-              content: ShakeShackString
-            });
+        var ShakeShackPopup = new google.maps.InfoWindow({
+            content: ShakeShackString
+        });
 
-            // B Natural Cafe popup info
-            var BNatString = '<div id="content">'+
+        // B Natural Cafe popup info
+        var BNatString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">B Natural Cafe</h1>'+
@@ -290,74 +291,102 @@
             '</div>'+
             '</div>';
 
-            var BNatPopup = new google.maps.InfoWindow({
-              content: BNatString
-            });
+        var BNatPopup = new google.maps.InfoWindow({
+            content: BNatString
+        });
 
-            // Oven Brick Pizza marker and popup
-            var BrickOvenMarker = new google.maps.Marker({
-              position: BrickOvenLatLng,
-              title: 'Brick Oven Pizza'
-            });
-            BrickOvenMarker.addListener('click', function() {
-              BrickOvenPopup.open(map, BrickOvenMarker);
-            });
+        // Oven Brick Pizza marker and popup
+        var BrickOvenMarker = new google.maps.Marker({
+            position: BrickOvenLatLng,
+            title: 'Brick Oven Pizza'
+        });
+        BrickOvenMarker.addListener('click', function() {
+            //SitarPopup.close(map, SitarMarker);
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            BrickOvenPopup.open(map, BrickOvenMarker);
+            currentInfoWindow = BrickOvenPopup;
+        });
 
-            // Sitar marker and popup
-            var SitarMarker = new google.maps.Marker({
-              position: SitarLatLng,
-              title: 'Sitar Restuarant'
-            });
-            SitarMarker.addListener('click', function() {
-              SitarPopup.open(map, SitarMarker);
-            });
+        // Sitar marker and popup
+        var SitarMarker = new google.maps.Marker({
+            position: SitarLatLng,
+            title: 'Sitar Restuarant'
+        });
+        SitarMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            SitarPopup.open(map, SitarMarker);
+            currentInfoWindow = SitarPopup;
+        });
 
-            // Hasnas marker and popup
-            var HasnasMarker = new google.maps.Marker({
-              position: HasnasLatLng,
-              title: 'Hasnas Grill'
-            });
-            HasnasMarker.addListener('click', function() {
-              HasnasPopup.open(map, HasnasMarker);
-            });
+        // Hasnas marker and popup
+        var HasnasMarker = new google.maps.Marker({
+            position: HasnasLatLng,
+            title: 'Hasnas Grill'
+        });
+        HasnasMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            HasnasPopup.open(map, HasnasMarker);
+            currentInfoWindow = HasnasPopup;
+        });
 
-            // Papa Johns marker and popup
-            var PapaJohnsMarker = new google.maps.Marker({
-              position: PapaJohnsLatLng,
-              title: 'Papa Johns'
-            });
-            PapaJohnsMarker.addListener('click', function() {
-              PapaJohnsPopup.open(map, PapaJohnsMarker);
-            });
+        // Papa Johns marker and popup
+        var PapaJohnsMarker = new google.maps.Marker({
+            position: PapaJohnsLatLng,
+            title: 'Papa Johns'
+        });
+        PapaJohnsMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            PapaJohnsPopup.open(map, PapaJohnsMarker);
+            currentInfoWindow = PapaJohnsPopup;
+        });
 
-            // Shake Shack marker and popup
-            var ShakeShackMarker = new google.maps.Marker({
-              position: ShakeShackLatLng,
-              title: 'Shake Shack'
-            });
-            ShakeShackMarker.addListener('click', function() {
-              ShakeShackPopup.open(map, ShakeShackMarker);
-            });
+        // Shake Shack marker and popup
+        var ShakeShackMarker = new google.maps.Marker({
+            position: ShakeShackLatLng,
+            title: 'Shake Shack'
+        });
+        ShakeShackMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            ShakeShackPopup.open(map, ShakeShackMarker);
+            currentInfoWindow = ShakeShackPopup;
 
-            // B Natural marker and popup
-            var BNatMarker = new google.maps.Marker({
-              position: BNatLatLng,
-              title: 'B Natural Cafe'
-            });
-            BNatMarker.addListener('click', function() {
-              BNatPopup.open(map, BNatMarker);
-            });
+        });
 
-            // set markers on map
-            BrickOvenMarker.setMap(map);
-            SitarMarker.setMap(map);
-            HasnasMarker.setMap(map);
-            PapaJohnsMarker.setMap(map);
-            ShakeShackMarker.setMap(map);
-            BNatMarker.setMap(map);
-          }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&callback=initMap"
-          async defer></script>
-        </body>
-        </html>
+        // B Natural marker and popup
+        var BNatMarker = new google.maps.Marker({
+            position: BNatLatLng,
+            title: 'B Natural Cafe'
+        });
+        BNatMarker.addListener('click', function() {
+            if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+            }
+            BNatPopup.open(map, BNatMarker);
+            currentInfoWindow = BNatPopup;
+        });
+
+        // set markers on map
+        BrickOvenMarker.setMap(map);
+        SitarMarker.setMap(map);
+        HasnasMarker.setMap(map);
+        PapaJohnsMarker.setMap(map);
+        ShakeShackMarker.setMap(map);
+        BNatMarker.setMap(map);
+    }
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&callback=initMap"
+        async defer></script>
+</body>
+</html>
