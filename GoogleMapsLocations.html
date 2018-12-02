@@ -1,210 +1,207 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Slashed</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+  <title>Slashed</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+  /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+    height: 100%;
+  }
+  /* Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  </style>
 </head>
 <body>
-<div id="map"></div>
-<script>
-    function initMap() {
-        var currentInfoWindow = null;
-        var myLatLng = {lat: 41.3163, lng: -72.9223}
-        var BrickOvenLatLng = {lat: 41.313435, lng: -72.931538};
-        var SitarLatLng = {lat:41.3100, lng:-72.9211};
-        var HasnasLatLng = {lat:41.3127, lng:-72.9333};
-        var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
-        var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
-        var BNatLatLng = {lat:41.3073, lng:-72.9300};
-        var BookTraderCafeLatLng = {lat:41.308503, lng:-72.932132};
-        var CrepesChoupetteLatLng = {lat:41.311193, lng:-72.922577};
-        var DonutCrazyLatLng = {lat:41.311409, lng:-72.929754};
-        var FroyoWorldLatLng = {lat:41.307797, lng:-72.930652};
-        var IvyWokLatLng = {lat:41.311168, lng:-72.931713};
-        var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
-        var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
-        var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
-
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13.8,
-            center: myLatLng,
-            mapTypeControl: false,
-            fullscreenControl: false,
-            styles: [
-                {featureType: 'administrative', elementType: 'labels',
-                    stylers: [
-                        {color: '#2762cb'},
-                        {lightness: '5'},
-                        {visibility: 'simplified'} ]},
-                {featureType: 'administrative.land_parcel', elementType: 'all',
-                    stylers: [
-                        {visibility: 'off'} ]},
-                {featureType: 'landscape', elementType: 'all',
-                    stylers: [
-                        {gamma: '0.50'},
-                        {lightness: '-75'},
-                        {saturation: '-86'},
-                        {hue: '#ff4a00'} ]},
-                {featureType: 'landscape.man_made', elementType: 'all',
-                    stylers: [
-                        {hue: '#ff1700'} ]},
+  <div id="map"></div>
+  <script>
+  function initMap() {
+    var currentInfoWindow = null;
+    var myLatLng = {lat: 41.3163, lng: -72.9223}
+    var BrickOvenLatLng = {lat: 41.313435, lng: -72.931538};
+    var SitarLatLng = {lat:41.3100, lng:-72.9211};
+    var HasnasLatLng = {lat:41.3127, lng:-72.9333};
+    var PapaJohnsLatLng = {lat:41.3149, lng:-72.9364};
+    var ShakeShackLatLng = {lat:41.3068, lng:-72.9285};
+    var BNatLatLng = {lat:41.3073, lng:-72.9300};
+    var BookTraderCafeLatLng = {lat:41.308503, lng:-72.932132};
+    var CrepesChoupetteLatLng = {lat:41.311193, lng:-72.922577};
+    var DonutCrazyLatLng = {lat:41.311409, lng:-72.929754};
+    var FroyoWorldLatLng = {lat:41.307797, lng:-72.930652};
+    var IvyWokLatLng = {lat:41.311168, lng:-72.931713};
+    var ArethusaFarmDairyLatLng = {lat:41.307337, lng:72.929346};
+    var MoesSouthwestGrillLatLng = {lat:41.311913, lng:-72.922398};
+    var TomatiloTacoJointLatLng = {lat:41.311181, lng:-72.931734};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13.8,
+      center: myLatLng,
+      mapTypeControl: false,
+      fullscreenControl: false,
+      styles: [
+        {featureType: 'administrative', elementType: 'labels',
+        stylers: [
+          {color: '#2762cb'},
+          {lightness: '5'},
+          {visibility: 'simplified'} ]},
+          {featureType: 'administrative.land_parcel', elementType: 'all',
+          stylers: [
+            {visibility: 'off'} ]},
+            {featureType: 'landscape', elementType: 'all',
+            stylers: [
+              {gamma: '0.50'},
+              {lightness: '-75'},
+              {saturation: '-86'},
+              {hue: '#ff4a00'} ]},
+              {featureType: 'landscape.man_made', elementType: 'all',
+              stylers: [
+                {hue: '#ff1700'} ]},
                 {
-                    featureType: 'landscape.natural.landcover',
-                    elementType: 'all',
-                    stylers: [
-                        {
-                            hue: '#ff0000'
-                        }
-                    ]
+                  featureType: 'landscape.natural.landcover', elementType: 'all',
+                  stylers: [
+                    {
+                      hue: '#ff0000'} ]},
+                {
+                  featureType: 'poi', elementType: 'all',
+                  stylers: [
+                    {
+                      color: '#e74231'},
+                    {
+                      visibility: 'off'} ]},
+                {
+                  featureType: 'poi',
+                  elementType: 'labels',
+                  stylers: [
+                    {
+                      visibility: 'on'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'poi',
-                    elementType: 'all',
-                    stylers: [
-                        {
-                            color: '#e74231'
-                        },
-                        {
-                            visibility: 'off'
-                        }
-                    ]
+                  featureType: 'poi',
+                  elementType: 'labels.text.stroke',
+                  stylers: [
+                    {
+                      color: '#4d6447'
+                    },
+                    {
+                      visibility: 'off'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'poi',
-                    elementType: 'labels',
-                    stylers: [
-                        {
-                            visibility: 'on'
-                        }
-                    ]
+                  featureType: 'poi',
+                  elementType: 'labels.icon',
+                  stylers: [
+                    {
+                      color: '#f0ce41'
+                    },
+                    {
+                      visibility: 'off'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'poi',
-                    elementType: 'labels.text.stroke',
-                    stylers: [
-                        {
-                            color: '#4d6447'
-                        },
-                        {
-                            visibility: 'off'
-                        }
-                    ]
+                  featureType: 'poi.park',
+                  elementType: 'geometry.fill',
+                  stylers: [
+                    {
+                      visibility: 'on'
+                    },
+                    {
+                      saturation: '0'
+                    },
+                    {
+                      lightness: '25'
+                    },
+                    {
+                      color: '#123a16'
+                    },
+                    {
+                      gamma: '1'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'poi',
-                    elementType: 'labels.icon',
-                    stylers: [
-                        {
-                            color: '#f0ce41'
-                        },
-                        {
-                            visibility: 'off'
-                        }
-                    ]
+                  featureType: 'road',
+                  elementType: 'all',
+                  stylers: [
+                    {
+                      color: '#231f20'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'poi.park',
-                    elementType: 'geometry.fill',
-                    stylers: [
-                        {
-                            visibility: 'on'
-                        },
-                        {
-                            saturation: '0'
-                        },
-                        {
-                            lightness: '25'
-                        },
-                        {
-                            color: '#123a16'
-                        },
-                        {
-                            gamma: '1'
-                        }
-                    ]
+                  featureType: 'road',
+                  elementType: 'labels.text.fill',
+                  stylers: [
+                    {
+                      color: '#9b826f'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'road',
-                    elementType: 'all',
-                    stylers: [
-                        {
-                            color: '#231f20'
-                        }
-                    ]
+                  featureType: 'transit',
+                  elementType: 'all',
+                  stylers: [
+                    {
+                      color: '#313639'
+                    },
+                    {
+                      visibility: 'off'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'road',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                        {
-                            color: '#9b826f'
-                        }
-                    ]
+                  featureType: 'transit',
+                  elementType: 'labels.text',
+                  stylers: [
+                    {
+                      hue: '#ff0000'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'transit',
-                    elementType: 'all',
-                    stylers: [
-                        {
-                            color: '#313639'
-                        },
-                        {
-                            visibility: 'off'
-                        }
-                    ]
+                  featureType: 'transit',
+                  elementType: 'labels.text.fill',
+                  stylers: [
+                    {
+                      visibility: 'simplified'
+                    },
+                    {
+                      hue: '#ff0000'
+                    }
+                  ]
                 },
                 {
-                    featureType: 'transit',
-                    elementType: 'labels.text',
-                    stylers: [
-                        {
-                            hue: '#ff0000'
-                        }
-                    ]
-                },
-                {
-                    featureType: 'transit',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                        {
-                            visibility: 'simplified'
-                        },
-                        {
-                            hue: '#ff0000'
-                        }
-                    ]
-                },
-                {
-                    featureType: 'water',
-                    elementType: 'all',
-                    stylers: [
-                        {
-                            color: '#0e171d'
-                        },
-                        {
-                            lightness: '5'
-                        }
-                    ]
+                  featureType: 'water',
+                  elementType: 'all',
+                  stylers: [
+                    {
+                      color: '#0e171d'
+                    },
+                    {
+                      lightness: '5'
+                    }
+                  ]
                 }
-            ]
-        });
-        //Brick oven popup info
-        var BrickOvenString = '<div id="content">'+
+              ]
+            });
+
+
+            var heatmap = new google.maps.visualization.HeatmapLayer({
+              data: getPoints(), radius: 55
+            });
+            heatmap.setMap(map);
+
+
+            //Brick oven popup info
+            var BrickOvenString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Brick Oven Pizza</h1>'+
@@ -214,13 +211,15 @@
             'Sun-Wed and Sat: 3:00 PM-3:00 AM</p>'+
             'Thu-Fri: 3:00 PM-4:00 AM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-        var BrickOvenPopup = new google.maps.InfoWindow({
-            content: BrickOvenString
-        });
-        // Sitar popup info
-        var SitarString = '<div id="content">'+
+            '</div>'+
+            '</div>';
+            var BrickOvenPopup = new google.maps.InfoWindow({
+              content: BrickOvenString
+            });
+
+
+            // Sitar popup info
+            var SitarString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Sitar Restaurant</h1>'+
@@ -229,13 +228,15 @@
             '10% off everyday</p>'+
             'Sun-Sat: 11:30 AM-2:30 PM, 5:00 PM-10:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-        var SitarPopup = new google.maps.InfoWindow({
-            content: SitarString
-        });
-        // Hasnas popup info
-        var HasnasString = '<div id="content">'+
+            '</div>'+
+            '</div>';
+            var SitarPopup = new google.maps.InfoWindow({
+              content: SitarString
+            });
+
+
+            // Hasnas popup info
+            var HasnasString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Hasnas Grill</h1>'+
@@ -247,13 +248,15 @@
             'Tue: Closed</p>'+
             'Fri-Sat: 11:00 AM-11:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-        var HasnasPopup = new google.maps.InfoWindow({
-            content: HasnasString
-        });
-        // PapaJohns popup info
-        var PapaJohnsString = '<div id="content">'+
+            '</div>'+
+            '</div>';
+            var HasnasPopup = new google.maps.InfoWindow({
+              content: HasnasString
+            });
+
+
+            // PapaJohns popup info
+            var PapaJohnsString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Papa Johns</h1>'+
@@ -262,14 +265,16 @@
             '50% off (online order) YALE50</p>'+
             'Sun-Thu: 11:00 AM-1:00 AM</p>'+
             'Fri-Sat: 11:00 AM-2:00 AM<br>'+
-        '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-        var PapaJohnsPopup = new google.maps.InfoWindow({
-            content: PapaJohnsString
-        });
-        // Shake Shack popup info
-        var ShakeShackString = '<div id="content">'+
+            '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
+            '</div>'+
+            '</div>';
+            var PapaJohnsPopup = new google.maps.InfoWindow({
+              content: PapaJohnsString
+            });
+
+
+            // Shake Shack popup info
+            var ShakeShackString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Shake Shack</h1>'+
@@ -279,13 +284,15 @@
             'Sun-Thu: 11:00 AM-10:00 PM</p>'+
             'Fri-Sat: 11:00 AM-11:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-        var ShakeShackPopup = new google.maps.InfoWindow({
-            content: ShakeShackString
-        });
-        // B Natural Cafe popup info
-        var BNatString = '<div id="content">'+
+            '</div>'+
+            '</div>';
+            var ShakeShackPopup = new google.maps.InfoWindow({
+              content: ShakeShackString
+            });
+
+
+            // B Natural Cafe popup info
+            var BNatString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">B Natural Cafe</h1>'+
@@ -295,15 +302,15 @@
             'Mon-Sat: 7:30 AM-8:00 PM</p>'+
             'Sun: 7:30 AM-6:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var BNatPopup = new google.maps.InfoWindow({
+              content: BNatString
+            });
 
-        var BNatPopup = new google.maps.InfoWindow({
-            content: BNatString
-        });
 
-        // Book Trader popup info
-        var BookTraderCafeString = '<div id="content">'+
+            // Book Trader popup info
+            var BookTraderCafeString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Book Trader Cafe</h1>'+
@@ -314,16 +321,15 @@
             'Mon-Fri: 7:30 AM-9:00 PM</p>'+
             'Sat: 9:00 AM-9:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var BookTraderCafePopup = new google.maps.InfoWindow({
+              content: BookTraderCafeString
+            });
 
-        var BookTraderCafePopup = new google.maps.InfoWindow({
-            content: BookTraderCafeString
-        });
 
-
-        //Crepes Choupette popup info
-        var CrepesChoupetteString = '<div id="content">'+
+            //Crepes Choupette popup info
+            var CrepesChoupetteString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Crêpes Choupette</h1>'+
@@ -333,15 +339,15 @@
             'Sun and Sat: 8:00 AM-5:00 PM</p>'+
             'Mon-Fri: 7:30 AM-6:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var CrepesChoupettePopup = new google.maps.InfoWindow({
+              content: CrepesChoupetteString
+            });
 
-        var CrepesChoupettePopup = new google.maps.InfoWindow({
-            content: CrepesChoupetteString
-        });
 
-        //Donut Crazy popup info
-        var DonutCrazyString = '<div id="content">'+
+            //Donut Crazy popup info
+            var DonutCrazyString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Donut Crazy</h1>'+
@@ -351,15 +357,15 @@
             'Fri and Sat: 7:00 AM-00:00 AM</p>'+
             'Sun-Thu: 7:00 AM-11:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var DonutCrazyPopup = new google.maps.InfoWindow({
+              content: DonutCrazyString
+            });
 
-        var DonutCrazyPopup = new google.maps.InfoWindow({
-            content: DonutCrazyString
-        });
 
-        //Froyo World popup info
-        var FroyoWorldString = '<div id="content">'+
+            //Froyo World popup info
+            var FroyoWorldString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Froyo World</h1>'+
@@ -369,15 +375,15 @@
             'Fri and Sat: 12:00 PM-00:00 AM</p>'+
             'Sun-Thu: 12:00 PM-11:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var FroyoWorldPopup = new google.maps.InfoWindow({
+              content: FroyoWorldString
+            });
 
-        var FroyoWorldPopup = new google.maps.InfoWindow({
-            content: FroyoWorldString
-        });
 
-        //Ivy Wok popup info
-        var IvyWokString = '<div id="content">'+
+            //Ivy Wok popup info
+            var IvyWokString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Ivy Wok</h1>'+
@@ -387,15 +393,15 @@
             'Mon-Sat: 11:00 AM-00:00 AM</p>'+
             'Sun: 12:00 PM-11:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var IvyWokPopup = new google.maps.InfoWindow({
+              content: IvyWokString
+            });
 
-        var IvyWokPopup = new google.maps.InfoWindow({
-            content: IvyWokString
-        });
 
-        //Arethusa Farm Dairy popup info
-        var ArethusaFarmDairyString = '<div id="content">'+
+            //Arethusa Farm Dairy popup info
+            var ArethusaFarmDairyString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Arethusa Farm Dairy</h1>'+
@@ -405,15 +411,15 @@
             'Mon-Sat: 11:00 AM-9:00 PM</p>'+
             'Sun: 12:00 PM-6:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var ArethusaFarmDairyPopup = new google.maps.InfoWindow({
+              content: ArethusaFarmDairyString
+            });
 
-        var ArethusaFarmDairyPopup = new google.maps.InfoWindow({
-            content: ArethusaFarmDairyString
-        });
 
-        //Moe's Southwest Grill popup info
-        var MoesSouthwestGrillString = '<div id="content">'+
+            //Moe's Southwest Grill popup info
+            var MoesSouthwestGrillString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Moes Southwest Grill</h1>'+
@@ -422,15 +428,15 @@
             '10% off food purchases(only) everyday</p>'+
             'Sun-Sat: 11:00 AM-9:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
+            '</div>'+
+            '</div>';
+            var MoesSouthwestGrillPopup = new google.maps.InfoWindow({
+              content: MoesSouthwestGrillString
+            });
 
-        var MoesSouthwestGrillPopup = new google.maps.InfoWindow({
-            content: MoesSouthwestGrillString
-        });
 
-        //Tomatilo Taco Joint popup info
-        var TomatiloTacoJointString = '<div id="content">'+
+            //Tomatilo Taco Joint popup info
+            var TomatiloTacoJointString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Tomatilo Taco Joint</h1>'+
@@ -439,210 +445,272 @@
             '15% off everyday</p>'+
             'Sun-Sat: 11:30 AM-10:00 PM<br>'+
             '<a href="https://www.facebook.com/messages/new?ids=USER_ID" target="_blank">Create Event</a><br /></p>'+
-        '</div>'+
-        '</div>';
-
-        var TomatiloTacoJointPopup = new google.maps.InfoWindow({
-            content: TomatiloTacoJointString
-        });
-
-        // Oven Brick Pizza marker and popup
-        var BrickOvenMarker = new google.maps.Marker({
-            position: BrickOvenLatLng,
-            title: 'Brick Oven Pizza'
-        });
-        BrickOvenMarker.addListener('click', function() {
-            //SitarPopup.close(map, SitarMarker);
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            BrickOvenPopup.open(map, BrickOvenMarker);
-            currentInfoWindow = BrickOvenPopup;
-        });
-        // Sitar marker and popup
-        var SitarMarker = new google.maps.Marker({
-            position: SitarLatLng,
-            title: 'Sitar Restuarant'
-        });
-        SitarMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            SitarPopup.open(map, SitarMarker);
-            currentInfoWindow = SitarPopup;
-        });
-        // Hasnas marker and popup
-        var HasnasMarker = new google.maps.Marker({
-            position: HasnasLatLng,
-            title: 'Hasnas Grill'
-        });
-        HasnasMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            HasnasPopup.open(map, HasnasMarker);
-            currentInfoWindow = HasnasPopup;
-        });
-        // Papa Johns marker and popup
-        var PapaJohnsMarker = new google.maps.Marker({
-            position: PapaJohnsLatLng,
-            title: 'Papa Johns'
-        });
-        PapaJohnsMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            PapaJohnsPopup.open(map, PapaJohnsMarker);
-            currentInfoWindow = PapaJohnsPopup;
-        });
-        // Shake Shack marker and popup
-        var ShakeShackMarker = new google.maps.Marker({
-            position: ShakeShackLatLng,
-            title: 'Shake Shack'
-        });
-        ShakeShackMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            ShakeShackPopup.open(map, ShakeShackMarker);
-            currentInfoWindow = ShakeShackPopup;
-        });
-        // B Natural marker and popup
-        var BNatMarker = new google.maps.Marker({
-            position: BNatLatLng,
-            title: 'B Natural Cafe'
-        });
-        BNatMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            BNatPopup.open(map, BNatMarker);
-            currentInfoWindow = BNatPopup;
-        });
-
-        // Book Trader Cafe marker and popup
-        var BookTraderCafeMarker = new google.maps.Marker({
-            position: BookTraderCafeLatLng,
-            title: 'Book Trader Cafe'
-        });
-        BookTraderCafeMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            BookTraderCafePopup.open(map, BookTraderCafeMarker);
-            currentInfoWindow = BookTraderCafePopup;
-        });
-
-        // Crepes Choupette marker and popup
-        var CrepesChoupetteMarker = new google.maps.Marker({
-            position: CrepesChoupetteLatLng,
-            title: 'Crêpes Choupette'
-        });
-        CrepesChoupetteMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            CrepesChoupettePopup.open(map, CrepesChoupetteMarker);
-            currentInfoWindow = CrepesChoupettePopup;
-        });
-
-        // Donut Crazy marker and popup
-        var DonutCrazyMarker = new google.maps.Marker({
-            position: DonutCrazyLatLng,
-            title: 'Donut Crazy'
-        });
-        DonutCrazyMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            DonutCrazyPopup.open(map, DonutCrazyMarker);
-            currentInfoWindow = DonutCrazyPopup;
-        });
-
-        // Froyo World marker and popup
-        var FroyoWorldMarker = new google.maps.Marker({
-            position: FroyoWorldLatLng,
-            title: 'Froyo World'
-        });
-        FroyoWorldMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            FroyoWorldPopup.open(map, FroyoWorldMarker);
-            currentInfoWindow = FroyoWorldPopup;
-        });
-
-        // Ivy Wok marker and popup
-        var IvyWokMarker = new google.maps.Marker({
-            position: IvyWokLatLng,
-            title: 'Ivy Wok'
-        });
-        IvyWokMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            IvyWokPopup.open(map, IvyWokMarker);
-            currentInfoWindow = IvyWokPopup;
-        });
-
-        // Arethusa Farm Dairy marker and popup
-        var ArethusaFarmDairyMarker = new google.maps.Marker({
-            position: ArethusaFarmDairyLatLng,
-            title: 'Arethusa Farm Dairy'
-        });
-        ArethusaFarmDairyMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            ArethusaFarmDairyPopup.open(map, ArethusaFarmDairyMarker);
-            currentInfoWindow = ArethusaFarmDairyPopup;
-        });
-
-        // Moe's Southwest Grill marker and popup
-        var MoesSouthwestGrillMarker = new google.maps.Marker({
-            position: MoesSouthwestGrillLatLng,
-            title: 'Moes Southwest Grill'
-        });
-        MoesSouthwestGrillMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            MoesSouthwestGrillPopup.open(map, MoesSouthwestGrillMarker);
-            currentInfoWindow = MoesSouthwestGrillPopup;
-        });
-
-        //Tomatilo Taco Joint marker and popup
-        var TomatiloTacoJointMarker = new google.maps.Marker({
-            position: TomatiloTacoJointLatLng,
-            title: 'Tomatilo Taco Joint'
-        });
-        TomatiloTacoJointMarker.addListener('click', function() {
-            if (currentInfoWindow != null) {
-                currentInfoWindow.close();
-            }
-            TomatiloTacoJointPopup.open(map, TomatiloTacoJointMarker);
-            currentInfoWindow = TomatiloTacoJointPopup;
-        });
+            '</div>'+
+            '</div>';
+            var TomatiloTacoJointPopup = new google.maps.InfoWindow({
+              content: TomatiloTacoJointString
+            });
 
 
-        // set markers on map
-        BrickOvenMarker.setMap(map);
-        SitarMarker.setMap(map);
-        HasnasMarker.setMap(map);
-        PapaJohnsMarker.setMap(map);
-        ShakeShackMarker.setMap(map);
-        BNatMarker.setMap(map);
-        BookTraderCafeMarker.setMap(map);
-        CrepesChoupetteMarker.setMap(map);
-        DonutCrazyMarker.setMap(map);
-        FroyoWorldMarker.setMap(map);
-        IvyWokMarker.setMap(map);
-        ArethusaFarmDairyMarker.setMap(map);
-        MoesSouthwestGrillMarker.setMap(map);
-        TomatiloTacoJointMarker.setMap(map);
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&callback=initMap"
+            // Oven Brick Pizza marker and popup
+            var BrickOvenMarker = new google.maps.Marker({
+              position: BrickOvenLatLng,
+              title: 'Brick Oven Pizza'
+            });
+
+
+            BrickOvenMarker.addListener('click', function() {
+              //SitarPopup.close(map, SitarMarker);
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              BrickOvenPopup.open(map, BrickOvenMarker);
+              currentInfoWindow = BrickOvenPopup;
+            });
+
+
+            // Sitar marker and popup
+            var SitarMarker = new google.maps.Marker({
+              position: SitarLatLng,
+              title: 'Sitar Restuarant'
+            });
+
+
+            SitarMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              SitarPopup.open(map, SitarMarker);
+              currentInfoWindow = SitarPopup;
+            });
+
+
+            // Hasnas marker and popup
+            var HasnasMarker = new google.maps.Marker({
+              position: HasnasLatLng,
+              title: 'Hasnas Grill'
+            });
+
+
+            HasnasMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              HasnasPopup.open(map, HasnasMarker);
+              currentInfoWindow = HasnasPopup;
+            });
+
+
+            // Papa Johns marker and popup
+            var PapaJohnsMarker = new google.maps.Marker({
+              position: PapaJohnsLatLng,
+              title: 'Papa Johns'
+            });
+
+
+            PapaJohnsMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              PapaJohnsPopup.open(map, PapaJohnsMarker);
+              currentInfoWindow = PapaJohnsPopup;
+            });
+
+
+            // Shake Shack marker and popup
+            var ShakeShackMarker = new google.maps.Marker({
+              position: ShakeShackLatLng,
+              title: 'Shake Shack'
+            });
+
+
+            ShakeShackMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              ShakeShackPopup.open(map, ShakeShackMarker);
+              currentInfoWindow = ShakeShackPopup;
+            });
+
+
+            // B Natural marker and popup
+            var BNatMarker = new google.maps.Marker({
+              position: BNatLatLng,
+              title: 'B Natural Cafe'
+            });
+
+
+            BNatMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              BNatPopup.open(map, BNatMarker);
+              currentInfoWindow = BNatPopup;
+            });
+
+
+            // Book Trader Cafe marker and popup
+            var BookTraderCafeMarker = new google.maps.Marker({
+              position: BookTraderCafeLatLng,
+              title: 'Book Trader Cafe'
+            });
+
+
+            BookTraderCafeMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              BookTraderCafePopup.open(map, BookTraderCafeMarker);
+              currentInfoWindow = BookTraderCafePopup;
+            });
+
+
+            // Crepes Choupette marker and popup
+            var CrepesChoupetteMarker = new google.maps.Marker({
+              position: CrepesChoupetteLatLng,
+              title: 'Crêpes Choupette'
+            });
+
+
+            CrepesChoupetteMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              CrepesChoupettePopup.open(map, CrepesChoupetteMarker);
+              currentInfoWindow = CrepesChoupettePopup;
+            });
+
+
+            // Donut Crazy marker and popup
+            var DonutCrazyMarker = new google.maps.Marker({
+              position: DonutCrazyLatLng,
+              title: 'Donut Crazy'
+            });
+
+
+            DonutCrazyMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              DonutCrazyPopup.open(map, DonutCrazyMarker);
+              currentInfoWindow = DonutCrazyPopup;
+            });
+
+
+            // Froyo World marker and popup
+            var FroyoWorldMarker = new google.maps.Marker({
+              position: FroyoWorldLatLng,
+              title: 'Froyo World'
+            });
+
+
+            FroyoWorldMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              FroyoWorldPopup.open(map, FroyoWorldMarker);
+              currentInfoWindow = FroyoWorldPopup;
+            });
+
+
+            // Ivy Wok marker and popup
+            var IvyWokMarker = new google.maps.Marker({
+              position: IvyWokLatLng,
+              title: 'Ivy Wok'
+            });
+
+
+            IvyWokMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              IvyWokPopup.open(map, IvyWokMarker);
+              currentInfoWindow = IvyWokPopup;
+            });
+
+
+            // Arethusa Farm Dairy marker and popup
+            var ArethusaFarmDairyMarker = new google.maps.Marker({
+              position: ArethusaFarmDairyLatLng,
+              title: 'Arethusa Farm Dairy'
+            });
+
+
+            ArethusaFarmDairyMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              ArethusaFarmDairyPopup.open(map, ArethusaFarmDairyMarker);
+              currentInfoWindow = ArethusaFarmDairyPopup;
+            });
+
+
+            // Moe's Southwest Grill marker and popup
+            var MoesSouthwestGrillMarker = new google.maps.Marker({
+              position: MoesSouthwestGrillLatLng,
+              title: 'Moes Southwest Grill'
+            });
+
+
+            MoesSouthwestGrillMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              MoesSouthwestGrillPopup.open(map, MoesSouthwestGrillMarker);
+              currentInfoWindow = MoesSouthwestGrillPopup;
+            });
+
+
+            //Tomatilo Taco Joint marker and popup
+            var TomatiloTacoJointMarker = new google.maps.Marker({
+              position: TomatiloTacoJointLatLng,
+              title: 'Tomatilo Taco Joint'
+            });
+
+
+            TomatiloTacoJointMarker.addListener('click', function() {
+              if (currentInfoWindow != null) {
+                currentInfoWindow.close();
+              }
+              TomatiloTacoJointPopup.open(map, TomatiloTacoJointMarker);
+              currentInfoWindow = TomatiloTacoJointPopup;
+            });
+
+            
+            // set markers on map
+            BrickOvenMarker.setMap(map);
+            SitarMarker.setMap(map);
+            HasnasMarker.setMap(map);
+            PapaJohnsMarker.setMap(map);
+            ShakeShackMarker.setMap(map);
+            BNatMarker.setMap(map);
+            BookTraderCafeMarker.setMap(map);
+            CrepesChoupetteMarker.setMap(map);
+            DonutCrazyMarker.setMap(map);
+            FroyoWorldMarker.setMap(map);
+            IvyWokMarker.setMap(map);
+            ArethusaFarmDairyMarker.setMap(map);
+            MoesSouthwestGrillMarker.setMap(map);
+            TomatiloTacoJointMarker.setMap(map);
+          }
+
+          function getPoints() {
+            return [
+            new google.maps.LatLng(41.313435, -72.931538),
+            new google.maps.LatLng(41.313435, -72.931538),
+            new google.maps.LatLng(41.313435, -72.931538),
+            new google.maps.LatLng(41.313435, -72.931538),
+            new google.maps.LatLng(41.313435, -72.931538),
+            new google.maps.LatLng(41.3068, -72.9285),
+            new google.maps.LatLng(41.3068, -72.9285),
+            new google.maps.LatLng(41.3068, -72.9285),
+            new google.maps.LatLng(41.3068, -72.9285),
+            new google.maps.LatLng(41.311193, -72.922577),
+          ];
+        }
+
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADftynOt2uhVe1dcZ0Uk83wLCxmQ-bkuE&libraries=visualization&callback=initMap"
         async defer></script>
-</body>
-</html></html>
+      </body>
+      </html>
