@@ -198,6 +198,21 @@
               data: getPoints(), radius: 55
             });
             heatmap.setMap(map);
+    
+    
+            navigator.geolocation.getCurrentPosition(
+            function(position) {
+                var currentPos = {lat: position.coords.latitude, lng: position.coords.longitude};
+                var markerCurrentPos = new google.maps.Marker({
+                    position: currentPos,
+                    map: map,
+                    label: 'ME'
+                });
+                bounds.extend(markerCurrentPos.position);
+                map.fitBounds(bounds);
+                map.panToBounds(bounds);
+            }
+        )
 
 
             //Brick oven popup info
@@ -694,6 +709,7 @@
             TomatiloTacoJointMarker.setMap(map);
           }
 
+    
           function getPoints() {
             return [
             new google.maps.LatLng(41.313435, -72.931538),
